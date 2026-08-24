@@ -1,0 +1,37 @@
+{
+  "name": "dsh-zcode-sync",
+  "version": "1.0.0",
+  "description": "ZCode → DSH 模型配置同步插件：读取 ZCode config.json 的自定义模型提供商，合并进 DSH llm-pi-ai 命名空间与凭据库。进程内走 settings/credentials 服务，享受 llm-pi-ai 自带校验，不直接改 YAML 文件。零硬编码机器路径，可迁移到任何电脑的 DSH。",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "zcode",
+    "model-providers",
+    "sync"
+  ],
+  "main": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0-rc <6",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  }
+}
