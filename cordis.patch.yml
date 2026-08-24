@@ -1,0 +1,7 @@
+# dsh-zcode-sync — Host plugin patch layer
+# 把同步插件插入 DSH 加载树。config 留空 = 全部走 schema 默认值，
+# 用户可在 web 设置（zcode-sync 命名空间）或 settings.yaml 里覆盖。
+- insert:
+    - id: zcode-sync
+      name: dsh-zcode-sync
+      config: {}
